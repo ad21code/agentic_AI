@@ -159,6 +159,37 @@ Built a production-ready conversational AI chatbot using LangChain (LCEL), Googl
 
 ---
 
+## ☁️ Deploy to Render
+
+### Option A — One-Click Blueprint
+
+1. Push this repo to GitHub (if not already).
+2. Go to [https://render.com](https://render.com) and sign up / log in.
+3. Click **New → Blueprint** and connect your GitHub repo.
+4. Render will detect `render.yaml` and set everything up automatically.
+5. When prompted, add the `GEMINI_API_KEY` environment variable with your Google Gemini API key.
+6. Click **Apply** — your service will build and deploy.
+
+### Option B — Manual Web Service
+
+1. Go to [https://render.com](https://render.com) and sign up / log in.
+2. Click **New → Web Service** and connect your GitHub repo.
+3. Configure the service:
+   | Setting | Value |
+   |---------|-------|
+   | **Runtime** | Python |
+   | **Build Command** | `pip install -r backend/requirements.txt` |
+   | **Start Command** | `cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT` |
+4. Under **Environment → Environment Variables**, add:
+   | Key | Value |
+   |-----|-------|
+   | `GEMINI_API_KEY` | *your Google Gemini API key* |
+5. Click **Deploy Web Service**.
+
+Once deployed, open your Render service URL to use the chatbot.
+
+---
+
 ## 🚀 Future Enhancements
 
 - PDF / document Q&A (RAG)
