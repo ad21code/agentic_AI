@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agentic AI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css?v=6" />
+</head>
+
+<body>
+  <!-- Animated background layer -->
+  <div class="bg-layer" id="bg-layer">
+    <div class="stars" id="stars"></div>
+  </div>
+
+  <div class="app">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 8V4H8"/>
+            <rect x="2" y="14" width="4" height="6" rx="1"/>
+            <rect x="10" y="14" width="4" height="6" rx="1"/>
+            <rect x="18" y="14" width="4" height="6" rx="1"/>
+            <path d="M4 14v-2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v2"/>
+            <circle cx="12" cy="4" r="2"/>
+          </svg>
+        </div>
+        <div class="header-info">
+          <h1>Agentic AI</h1>
+          <span class="status-badge"><span class="status-dot"></span> Online</span>
+        </div>
+      </div>
+
+      <div class="header-right">
+        <label class="theme-toggle" title="Toggle Day/Night Mode">
+          <input type="checkbox" id="theme-toggle" />
+          <span class="toggle-track">
+            <span class="toggle-icon sun-icon">&#9728;&#65039;</span>
+            <span class="toggle-icon moon-icon">&#127769;</span>
+            <span class="toggle-thumb"></span>
+          </span>
+        </label>
+      </div>
+    </header>
+
+    <!-- CHAT CONTAINER -->
+    <main class="chat-container" id="chat-container">
+      <div class="welcome-msg" id="welcome-msg">
+        <div class="welcome-icon">&#129302;</div>
+        <h2>Welcome to Agentic AI</h2>
+        <p>Ask me anything — I can search the web, execute code, and reason through complex tasks.</p>
+      </div>
+    </main>
+
+    <!-- INPUT AREA -->
+    <footer class="input-area">
+      <div class="input-wrapper">
+        <textarea
+          id="user-input"
+          rows="1"
+          placeholder="Ask Agentic AI anything..."
+        ></textarea>
+
+        <div class="input-actions">
+          <button id="mic-btn" class="mic-btn" title="Voice input" type="button">
+            <span class="mic-icon" id="mic-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                <line x1="12" y1="19" x2="12" y2="22"/>
+              </svg>
+            </span>
+            <span class="mic-pulse"></span>
+            <span class="mic-spinner" id="mic-spinner"></span>
+          </button>
+
+          <button class="send-btn" id="send-btn" title="Send message" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/static/marked.min.js"></script>
+  <script src="/static/script.js?v=6"></script>
+</body>
+</html>
